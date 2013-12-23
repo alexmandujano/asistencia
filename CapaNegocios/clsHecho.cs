@@ -20,7 +20,7 @@ namespace CapaNegocios
             // String mensaje;
 
             lst.Add(new Parametros("@fecha", fecha));
-            return manejador.Listado("bus_hecho_fecha", lst);
+            return manejador.Listado("sp_BUSCAR_ACTIVOS", lst);
         }
 
 
@@ -30,7 +30,7 @@ namespace CapaNegocios
             // String mensaje;
 
             lst.Add(new Parametros("@DNI", DNI));
-            return manejador.Listado("bus_permiso_DNI", lst);
+            return manejador.Listado("sp_BUSCAR_ACTIVOS", lst);
         }
 
 

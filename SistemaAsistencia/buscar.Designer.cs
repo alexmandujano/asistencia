@@ -28,23 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmbus));
             this.dtgbus = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgbus)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgbus
             // 
             this.dtgbus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgbus.Location = new System.Drawing.Point(12, 67);
+            this.dtgbus.Location = new System.Drawing.Point(12, 38);
             this.dtgbus.Name = "dtgbus";
-            this.dtgbus.Size = new System.Drawing.Size(722, 401);
+            this.dtgbus.Size = new System.Drawing.Size(722, 386);
             this.dtgbus.TabIndex = 0;
+            this.dtgbus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgbus_CellContentClick);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(659, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 49);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Reporte";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmbus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 480);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dtgbus);
             this.Name = "frmbus";
             this.Text = "buscar";
@@ -57,5 +75,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgbus;
+        private System.Windows.Forms.Button button1;
     }
 }

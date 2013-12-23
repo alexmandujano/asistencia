@@ -132,36 +132,69 @@ namespace SistemaAsistencia
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            String pedido = e.Node.Text;
-            string parametro="";
+           
+             String opcion = e.Node.Name;
+            string ParametroDocente="";
+            string ParametroFacultad="";
+            string ParametroFacultadTipo = "";
+ 
             Boolean DniNombre = false;
-            if (pedido=="DNI")
+            if (opcion=="menudni")
             {
-            parametro = Interaction.InputBox("Ingrese su DNI");
+            ParametroDocente = Interaction.InputBox("Ingrese su DNI");
             DniNombre = true;
             }
-            if (pedido == "Nombre")
+            if (opcion == "menunom")
             {
-                parametro = Interaction.InputBox("Ingrese Nombre o Ape Paterno");
+                ParametroDocente = Interaction.InputBox("Ingrese Nombre o Ape Paterno");
                 DniNombre = true;
             }
-            if (pedido == "Activos") parametro = "A";
-            if (pedido == "Inactivo") parametro = "I";
-            if (pedido == "Vacaciones") parametro = "V";
-            if (pedido == "Todos") DniNombre=true;    
+            if (opcion == "menuact") ParametroDocente = "A";
+            if (opcion == "menuina") ParametroDocente = "I";
+            if (opcion == "menuvac") ParametroDocente = "V";
+            if (opcion == "menutod")
+                {
+                    DniNombre=true;
+                    ParametroDocente = "Todos";
+                }
+            if (opcion == "facasi") {
+                ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
+                ParametroFacultadTipo = "Asistencias";
+            }
+            if (opcion == "facfal")
+            {
+                ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
+                ParametroFacultadTipo = "Faltas";
+            }
+            if (opcion == "factar")
+            {
+                ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
+                ParametroFacultadTipo = "Tardanzas";
+            }
+         
+            
+
+
+
+
+
+
+
 
 
             if (this.panelprincipal.Controls.Count > 0)
                 this.panelprincipal.Controls.RemoveAt(0);
-            frmbus docente = new frmbus();
-            docente.TopLevel = false;
-            docente.FormBorderStyle = FormBorderStyle.None;
-            docente.Dock = DockStyle.None;
-            this.panelprincipal.Controls.Add(docente);
-            this.panelprincipal.Tag = docente;
-            docente.docenteparametro =parametro;
-            docente.DniNombre = DniNombre;
-            docente.Show();
+            frmbus FormularioBuscar = new frmbus();
+            FormularioBuscar.TopLevel = false;
+            FormularioBuscar.FormBorderStyle = FormBorderStyle.None;
+            FormularioBuscar.Dock = DockStyle.None;
+            this.panelprincipal.Controls.Add(FormularioBuscar);
+            this.panelprincipal.Tag = FormularioBuscar;
+            FormularioBuscar.ParametroDocente = ParametroDocente;
+            FormularioBuscar.ParametroFacultad = ParametroFacultad;
+            FormularioBuscar.ParametroFacultadTipo = ParametroFacultadTipo;
+            FormularioBuscar.DniNombre = DniNombre;
+            FormularioBuscar.Show();
             
         }
     }

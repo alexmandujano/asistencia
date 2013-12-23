@@ -40,20 +40,26 @@ namespace SistemaAsistencia
                 dtgbus.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
                 dtgbus.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
                 dtgbus.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
+                dtgbus.Rows[i].Cells[7].Value = dt.Rows[i][7].ToString();
+                dtgbus.Rows[i].Cells[8].Value = dt.Rows[i][8].ToString();
             }
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(cbestado.Text.Substring(0, 1));
             docente.DNI = txtdni.Text;
             docente.Ap_paterno = txtapep.Text;
             docente.Ap_materno = txtapem.Text;
             docente.Nombres = txtnom.Text;
+            docente.Fecha_nac = dtpfech.Value;
             if (rbtmas.Checked == true) docente.Sexo = "M"; docente.Sexo = "F";
             docente.Correo = txtema.Text;
+            docente.Estado = Convert.ToChar(cbestado.Text.Substring(0,1));
            
             String dni = "../../images/" + txtdni.Text + ".jpg";
             ptbfoto.Image.Save(dni, System.Drawing.Imaging.ImageFormat.Jpeg);
             docente.Ruta_foto = dni;
+            
             MessageBox.Show(OpcionDocente.InsertarDocente(docente), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -100,14 +106,19 @@ namespace SistemaAsistencia
         {
 
             int row = dtgbus.CurrentCell.RowIndex;
-            string sexo = dtgbus.Rows[row].Cells[4].Value.ToString();
-            string foto = dtgbus.Rows[row].Cells[6].Value.ToString();
+            string sexo = dtgbus.Rows[row].Cells[5].Value.ToString();
+            string foto = dtgbus.Rows[row].Cells[7].Value.ToString();
+            string est=dtgbus.Rows[row].Cells[8].Value.ToString();
             txtdni.Text = dtgbus.Rows[row].Cells[0].Value.ToString();
             txtapep.Text = dtgbus.Rows[row].Cells[1].Value.ToString();
             txtapem.Text = dtgbus.Rows[row].Cells[2].Value.ToString();
             txtnom.Text = dtgbus.Rows[row].Cells[3].Value.ToString();
+            dtpfech.Text=dtgbus.Rows[row].Cells[4].Value.ToString();
+            if (est == "A") cbestado.SelectedIndex=0;
+            if (est == "I") cbestado.SelectedIndex=1;
+            if (est == "V") cbestado.SelectedIndex=2;
             if (sexo == "M") rbtmas.Checked = true; rbtfem.Checked = true;
-            txtema.Text = dtgbus.Rows[row].Cells[5].Value.ToString();
+            txtema.Text = dtgbus.Rows[row].Cells[6].Value.ToString();
             ptbfoto.ImageLocation = foto;
 
             pnlbus.Visible = false;
@@ -130,6 +141,18 @@ namespace SistemaAsistencia
         private void button5_Click(object sender, EventArgs e)
         {
             pnlbus.Visible = true;
+        }
+
+        private void btnnuev_Click(object sender, EventArgs e)
+        {
+            txtapem.Clear();
+            txtnom.Clear();
+            txtapep.Clear();
+            txtdni.Clear();
+            txtema.Clear();
+            cbestado.SelectedIndex = 0;
+            dtpfech.Value = DateTime.Now;
+            txtnom.Focus();
         }
     }
 }

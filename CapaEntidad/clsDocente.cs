@@ -13,12 +13,13 @@ namespace CapaEntidad
         private string m_ap_paterno;
         private string m_ap_materno;
         private string m_nombres;
+        private DateTime m_fecha_nac;
         private string m_sexo;
         private string m_correo;
         private string m_ruta_foto;
+        private char m_estado;
 
-       
-
+        
         public string DNI
         {
             get { return m_DNI; }
@@ -45,8 +46,12 @@ namespace CapaEntidad
             get { return m_nombres; }
             set { m_nombres = value; }
         }
-        
 
+        public DateTime Fecha_nac
+        {
+            get { return m_fecha_nac; }
+            set { m_fecha_nac = value; }
+        }
         public string Sexo
         {
             get { return m_sexo; }
@@ -67,6 +72,12 @@ namespace CapaEntidad
         }
 
 
+        public char Estado
+        {
+            get { return m_estado; }
+            set { m_estado = value; }
+        }
+       
 
 
 

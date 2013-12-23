@@ -9,7 +9,7 @@ namespace CapaDatos
     public class Manejador
     {
         //public SqlConnection conexion = new SqlConnection("server=SERVLINDA\\SQLEXPRESS;DataBase=AsistenciaBiometrico;Integrated Security=true");
-        public SqlConnection conexion = new SqlConnection("server=SPARTA21;DataBase=AsistenciaBiometrico;Integrated Security=true");
+        public SqlConnection conexion = new SqlConnection("server=SPARTA21;DataBase=ASISTENCIA_DOCENTES;Integrated Security=true");
 
         public void connectar()
         {

@@ -21,9 +21,9 @@ namespace CapaNegocios
 
                lst.Add(new Parametros("@DNI", dni));
                lst.Add(new Parametros("@NOMBRE", dni));
-               
 
-               return manejador.Listado("bus_docente_DNI",lst);
+
+               return manejador.Listado("sp_BUS_DOCENTE_DNI", lst);
           
         
         }
@@ -37,7 +37,7 @@ namespace CapaNegocios
 
 
 
-               return manejador.Listado("BUSCAR_ACTIVOS", lst);
+               return manejador.Listado("sp_BUSCAR_ACTIVOS", lst);
           
         
         }
@@ -51,12 +51,13 @@ namespace CapaNegocios
                 lst.Add(new Parametros("@DNI", docente.DNI));
                 lst.Add(new Parametros("@AP_PATERNO", docente.Ap_paterno));
                 lst.Add(new Parametros("@AP_MATERNO", docente.Ap_materno));
+                lst.Add(new Parametros("@FECHA_NAC", docente.Fecha_nac));
                 lst.Add(new Parametros("@NOMBRES", docente.Nombres));
                 lst.Add(new Parametros("@SEXO", docente.Sexo));
                 lst.Add(new Parametros("@CORREO", docente.Correo));
                 lst.Add(new Parametros("@RUTA_FOTO", docente.Ruta_foto));
-
-                manejador.EjecutarSP("INSERTARDOCENTE", ref lst);
+                lst.Add(new Parametros("@ESTADO", docente.Estado));
+                manejador.EjecutarSP("sp_REG_EDIT_DOCENTE", ref lst);
                 mensaje = "Docente Guardado..";
 
             }

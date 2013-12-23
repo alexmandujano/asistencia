@@ -8,3 +8,8 @@ C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaDatos\bin\Debu
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Alex\Documents\GitHub\asistencia\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Alex\Documents\GitHub\asistencia\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Alex\Documents\GitHub\asistencia\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\asistencia\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Alex\Documents\GitHub\asistencia\CapaDatos\obj\Debug\CapaDatos.pdb

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDocente.cs" />
+    <Compile Include="clsFacultad.cs" />
     <Compile Include="clsHecho.cs" />
     <Compile Include="clsPermiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

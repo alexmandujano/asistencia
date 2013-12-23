@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpfech = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.btnnuev = new System.Windows.Forms.Button();
@@ -49,6 +51,8 @@
             this.txtdni = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Estado = new System.Windows.Forms.Label();
+            this.cbestado = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.ptbfoto = new System.Windows.Forms.PictureBox();
@@ -62,11 +66,15 @@
             this.ApellidoP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Est = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtbus = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbhuella)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -74,10 +82,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbfoto)).BeginInit();
             this.pnlbus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgbus)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpfech);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.btnedit);
             this.groupBox1.Controls.Add(this.btnnuev);
@@ -94,12 +105,30 @@
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.txtdni);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 51);
+            this.groupBox1.Location = new System.Drawing.Point(27, 93);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(355, 303);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // dtpfech
+            // 
+            this.dtpfech.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpfech.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfech.Location = new System.Drawing.Point(80, 141);
+            this.dtpfech.Name = "dtpfech";
+            this.dtpfech.Size = new System.Drawing.Size(129, 20);
+            this.dtpfech.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(24, 147);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Fech Nac. ";
             // 
             // button5
             // 
@@ -122,12 +151,18 @@
             // 
             // btnnuev
             // 
-            this.btnnuev.Location = new System.Drawing.Point(165, 232);
+            this.btnnuev.BackColor = System.Drawing.Color.Transparent;
+            this.btnnuev.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnnuev.BackgroundImage")));
+            this.btnnuev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnnuev.FlatAppearance.BorderSize = 0;
+            this.btnnuev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnuev.Location = new System.Drawing.Point(181, 220);
             this.btnnuev.Name = "btnnuev";
-            this.btnnuev.Size = new System.Drawing.Size(56, 40);
+            this.btnnuev.Size = new System.Drawing.Size(56, 65);
             this.btnnuev.TabIndex = 18;
-            this.btnnuev.Text = "Nuevo";
-            this.btnnuev.UseVisualStyleBackColor = true;
+            this.btnnuev.Text = " ";
+            this.btnnuev.UseVisualStyleBackColor = false;
+            this.btnnuev.Click += new System.EventHandler(this.btnnuev_Click);
             // 
             // ptbhuella
             // 
@@ -142,7 +177,7 @@
             this.txtapem.Location = new System.Drawing.Point(220, 109);
             this.txtapem.Name = "txtapem";
             this.txtapem.Size = new System.Drawing.Size(129, 20);
-            this.txtapem.TabIndex = 15;
+            this.txtapem.TabIndex = 3;
             // 
             // label6
             // 
@@ -158,7 +193,7 @@
             this.txtapep.Location = new System.Drawing.Point(80, 109);
             this.txtapep.Name = "txtapep";
             this.txtapep.Size = new System.Drawing.Size(129, 20);
-            this.txtapep.TabIndex = 16;
+            this.txtapep.TabIndex = 2;
             // 
             // label2
             // 
@@ -173,7 +208,7 @@
             // 
             this.groupBox4.Controls.Add(this.rbtfem);
             this.groupBox4.Controls.Add(this.rbtmas);
-            this.groupBox4.Location = new System.Drawing.Point(27, 188);
+            this.groupBox4.Location = new System.Drawing.Point(27, 197);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(96, 100);
             this.groupBox4.TabIndex = 12;
@@ -207,19 +242,19 @@
             this.txtnom.Location = new System.Drawing.Point(80, 67);
             this.txtnom.Name = "txtnom";
             this.txtnom.Size = new System.Drawing.Size(129, 20);
-            this.txtnom.TabIndex = 8;
+            this.txtnom.TabIndex = 1;
             // 
             // txtema
             // 
-            this.txtema.Location = new System.Drawing.Point(80, 147);
+            this.txtema.Location = new System.Drawing.Point(80, 171);
             this.txtema.Name = "txtema";
             this.txtema.Size = new System.Drawing.Size(129, 20);
-            this.txtema.TabIndex = 8;
+            this.txtema.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 150);
+            this.label4.Location = new System.Drawing.Point(24, 174);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 3;
@@ -248,7 +283,7 @@
             this.txtdni.MaxLength = 8;
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(95, 20);
-            this.txtdni.TabIndex = 11;
+            this.txtdni.TabIndex = 0;
             // 
             // label1
             // 
@@ -261,15 +296,38 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.Estado);
+            this.groupBox3.Controls.Add(this.cbestado);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.ptbfoto);
-            this.groupBox3.Location = new System.Drawing.Point(414, 51);
+            this.groupBox3.Location = new System.Drawing.Point(429, 93);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(231, 195);
+            this.groupBox3.Size = new System.Drawing.Size(231, 224);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Foto";
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSize = true;
+            this.Estado.Location = new System.Drawing.Point(27, 200);
+            this.Estado.Name = "Estado";
+            this.Estado.Size = new System.Drawing.Size(40, 13);
+            this.Estado.TabIndex = 3;
+            this.Estado.Text = "Estado";
+            // 
+            // cbestado
+            // 
+            this.cbestado.FormattingEnabled = true;
+            this.cbestado.Items.AddRange(new object[] {
+            "Activo\t",
+            "Inactivo",
+            "Vacaciones"});
+            this.cbestado.Location = new System.Drawing.Point(83, 197);
+            this.cbestado.Name = "cbestado";
+            this.cbestado.Size = new System.Drawing.Size(103, 21);
+            this.cbestado.TabIndex = 0;
             // 
             // button2
             // 
@@ -302,22 +360,30 @@
             // 
             // btnelim
             // 
-            this.btnelim.Location = new System.Drawing.Point(548, 310);
+            this.btnelim.BackColor = System.Drawing.Color.Transparent;
+            this.btnelim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnelim.BackgroundImage")));
+            this.btnelim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnelim.FlatAppearance.BorderSize = 0;
+            this.btnelim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnelim.Location = new System.Drawing.Point(615, 338);
             this.btnelim.Name = "btnelim";
-            this.btnelim.Size = new System.Drawing.Size(85, 58);
+            this.btnelim.Size = new System.Drawing.Size(45, 58);
             this.btnelim.TabIndex = 18;
-            this.btnelim.Text = "X";
-            this.btnelim.UseVisualStyleBackColor = true;
+            this.btnelim.UseVisualStyleBackColor = false;
             this.btnelim.Click += new System.EventHandler(this.btnelim_Click);
             // 
             // btngua
             // 
-            this.btngua.Location = new System.Drawing.Point(414, 310);
+            this.btngua.BackColor = System.Drawing.Color.Transparent;
+            this.btngua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btngua.BackgroundImage")));
+            this.btngua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btngua.FlatAppearance.BorderSize = 0;
+            this.btngua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngua.Location = new System.Drawing.Point(554, 338);
             this.btngua.Name = "btngua";
-            this.btngua.Size = new System.Drawing.Size(116, 58);
-            this.btngua.TabIndex = 18;
-            this.btngua.Text = "Save";
-            this.btngua.UseVisualStyleBackColor = true;
+            this.btngua.Size = new System.Drawing.Size(51, 58);
+            this.btngua.TabIndex = 0;
+            this.btngua.UseVisualStyleBackColor = false;
             this.btngua.Click += new System.EventHandler(this.button4_Click);
             // 
             // openFileDialog1
@@ -327,43 +393,52 @@
             // 
             // pnlbus
             // 
+            this.pnlbus.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pnlbus.Controls.Add(this.button3);
             this.pnlbus.Controls.Add(this.dtgbus);
             this.pnlbus.Controls.Add(this.txtbus);
             this.pnlbus.Controls.Add(this.label5);
-            this.pnlbus.Location = new System.Drawing.Point(18, 45);
+            this.pnlbus.Location = new System.Drawing.Point(12, 72);
             this.pnlbus.Name = "pnlbus";
-            this.pnlbus.Size = new System.Drawing.Size(401, 278);
+            this.pnlbus.Size = new System.Drawing.Size(399, 281);
             this.pnlbus.TabIndex = 19;
             this.pnlbus.Visible = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(346, 252);
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(367, 252);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 23);
+            this.button3.Size = new System.Drawing.Size(23, 23);
             this.button3.TabIndex = 3;
-            this.button3.Text = "x";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Text = " ";
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dtgbus
             // 
             this.dtgbus.AllowUserToAddRows = false;
+            this.dtgbus.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtgbus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgbus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DNI,
             this.ApellidoP,
             this.ApellidoM,
             this.Nombres,
+            this.FECHA,
             this.Sexo,
             this.Correo,
-            this.Foto});
+            this.Foto,
+            this.Est});
             this.dtgbus.Location = new System.Drawing.Point(6, 51);
             this.dtgbus.Name = "dtgbus";
             this.dtgbus.ReadOnly = true;
             this.dtgbus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgbus.Size = new System.Drawing.Size(392, 195);
+            this.dtgbus.Size = new System.Drawing.Size(384, 195);
             this.dtgbus.TabIndex = 2;
             this.dtgbus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgbus_CellClick);
             this.dtgbus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgbus_CellContentClick);
@@ -392,6 +467,12 @@
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
             // 
+            // FECHA
+            // 
+            this.FECHA.HeaderText = "Fech_Nac";
+            this.FECHA.Name = "FECHA";
+            this.FECHA.ReadOnly = true;
+            // 
             // Sexo
             // 
             this.Sexo.HeaderText = "Sexo";
@@ -410,8 +491,15 @@
             this.Foto.Name = "Foto";
             this.Foto.ReadOnly = true;
             // 
+            // Est
+            // 
+            this.Est.HeaderText = "Estado";
+            this.Est.Name = "Est";
+            this.Est.ReadOnly = true;
+            // 
             // txtbus
             // 
+            this.txtbus.BackColor = System.Drawing.Color.White;
             this.txtbus.Location = new System.Drawing.Point(50, 25);
             this.txtbus.Name = "txtbus";
             this.txtbus.Size = new System.Drawing.Size(207, 20);
@@ -427,12 +515,34 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "DNI";
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(2, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(283, 54);
+            this.panel1.TabIndex = 47;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Window;
+            this.label8.Location = new System.Drawing.Point(56, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(181, 24);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Registro Docentes";
+            // 
             // frmDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(648, 597);
+            this.ClientSize = new System.Drawing.Size(675, 597);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlbus);
             this.Controls.Add(this.btnelim);
             this.Controls.Add(this.btngua);
@@ -450,10 +560,13 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbfoto)).EndInit();
             this.pnlbus.ResumeLayout(false);
             this.pnlbus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgbus)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -490,14 +603,22 @@
         private System.Windows.Forms.DataGridView dtgbus;
         private System.Windows.Forms.TextBox txtbus;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DateTimePicker dtpfech;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label Estado;
+        private System.Windows.Forms.ComboBox cbestado;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoM;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Foto;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Est;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
 
     }
 }

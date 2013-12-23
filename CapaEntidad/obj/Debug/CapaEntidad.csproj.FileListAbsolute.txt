@@ -8,3 +8,8 @@ C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaEntidad\bin\De
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaEntidad\obj\Debug\CapaEntidad.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Alex\Documents\GitHub\asistencia\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Alex\Documents\GitHub\asistencia\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Alex\Documents\GitHub\asistencia\CapaEntidad\obj\Debug\CapaEntidad.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\asistencia\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Alex\Documents\GitHub\asistencia\CapaEntidad\obj\Debug\CapaEntidad.pdb

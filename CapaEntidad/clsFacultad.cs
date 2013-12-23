@@ -17,7 +17,7 @@ namespace CapaEntidad
               
     //atributos tablaciclo 
         private string m_idciclo;
-        private string m_semestre;
+        private string m_anio;
         private string m_ciclo;
             
         
@@ -51,10 +51,10 @@ namespace CapaEntidad
             set { m_idciclo = value; }
         }
 
-        public string Semestre
+        public string Anio
         {
-            get { return m_semestre; }
-            set { m_semestre = value; }
+            get { return m_anio; }
+            set { m_anio = value; }
         }
 
         public string Ciclo

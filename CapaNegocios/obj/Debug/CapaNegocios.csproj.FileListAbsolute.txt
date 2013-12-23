@@ -16,3 +16,12 @@ C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaNegocios\bin\D
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaNegocios\obj\Debug\CapaNegocios.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaNegocios\obj\Debug\CapaNegocios.dll
 C:\Users\Alex\Desktop\BIOMETRICO\BIOMETRICO\SistemaAsistencia\CapaNegocios\obj\Debug\CapaNegocios.pdb
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\bin\Debug\CapaNegocios.dll
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\bin\Debug\CapaNegocios.pdb
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\bin\Debug\CapaDatos.dll
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\bin\Debug\CapaEntidad.dll
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\bin\Debug\CapaDatos.pdb
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\bin\Debug\CapaEntidad.pdb
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\obj\Debug\CapaNegocios.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\obj\Debug\CapaNegocios.dll
+C:\Users\Alex\Documents\GitHub\asistencia\CapaNegocios\obj\Debug\CapaNegocios.pdb
