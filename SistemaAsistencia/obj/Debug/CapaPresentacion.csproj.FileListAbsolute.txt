@@ -64,3 +64,5 @@ C:\Users\Alex\Documents\GitHub\asistencia\SistemaAsistencia\obj\Debug\SistemaAsi
 C:\Users\Alex\Documents\GitHub\asistencia\SistemaAsistencia\obj\Debug\SistemaAsistencia.Properties.Resources.resources
 C:\Users\Alex\Documents\GitHub\asistencia\SistemaAsistencia\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
 C:\Users\Alex\Documents\GitHub\asistencia\SistemaAsistencia\obj\Debug\SistemaAsistencia.login.resources
+C:\Users\Alex\Documents\GitHub\asistencia\SistemaAsistencia\obj\Debug\SistemaAsistencia.frmBuscarPorTiempo.resources
+C:\Users\Alex\Documents\GitHub\asistencia\SistemaAsistencia\obj\Debug\SistemaAsistencia.frmbusfech.resources

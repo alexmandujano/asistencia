@@ -145,7 +145,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCurso";
             this.ShowIcon = false;
-            this.Text = "Curso";
+            this.Text = "co";
             this.Load += new System.EventHandler(this.frmCurso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

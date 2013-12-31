@@ -52,9 +52,53 @@ namespace CapaNegocios
 
 
             return manejador.Listado("TARDANZA_ESCUELA", lst);
-
-
         }
 
+       //desde aqui aremos las busquedas por tiempo
+
+       public DataTable ListarAsistenciaxMes(String mes)
+       {
+           List<Parametros> lst = new List<Parametros>();
+           lst.Add(new Parametros("@mes", mes));
+           return manejador.Listado("sp_ASISTENCIA_MES", lst);
+       }
+
+    public DataTable ListarFaltaxMes(String mes)
+       { 
+           List<Parametros> lst = new List<Parametros>();
+           lst.Add(new Parametros("@mes", mes));
+           return manejador.Listado("sp_FALTA_MES", lst);
+       }
+    public DataTable ListarTardanzaxMes(String mes)
+    {
+        List<Parametros> lst = new List<Parametros>();
+        lst.Add(new Parametros("@mes", mes));
+        return manejador.Listado("sp_TARDANZA_MES", lst);
+    }
+
+       //entre fechas
+
+         public DataTable ListarAsistenciaEntreFechas(DateTime fecha1 ,DateTime fecha2)
+         {
+                List<Parametros> lst = new List<Parametros>();
+                lst.Add(new Parametros("@FECHA1", fecha1));
+                lst.Add(new Parametros("@FECHA2", fecha2));
+                return manejador.Listado("sp_ASISTENCIA_FECHAS", lst);
+        }
+        public DataTable ListarFaltaEntreFechas(DateTime fecha1 ,DateTime fecha2)
+         {
+                List<Parametros> lst = new List<Parametros>();
+                lst.Add(new Parametros("@FECHA1", fecha1));
+                lst.Add(new Parametros("@FECHA2", fecha2));
+                return manejador.Listado("sp_FALTA_FECHAS", lst);
+        }
+        public DataTable ListarTardanzaEntreFechas(DateTime fecha1, DateTime fecha2)
+        {
+            List<Parametros> lst = new List<Parametros>();
+            lst.Add(new Parametros("@FECHA1", fecha1)); 
+            lst.Add(new Parametros("@FECHA2", fecha2));
+            return manejador.Listado("sp_TARDANZA_FECHAS", lst);
+        }
+        
     }
 }

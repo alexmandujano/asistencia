@@ -61,17 +61,29 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="buscar.cs">
+    <Compile Include="frmBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="buscar.Designer.cs">
-      <DependentUpon>buscar.cs</DependentUpon>
+    <Compile Include="frmBuscar.Designer.cs">
+      <DependentUpon>frmBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAsignacionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAsignacionCurso.Designer.cs">
       <DependentUpon>frmAsignacionCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarPorTiempo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarPorTiempo.Designer.cs">
+      <DependentUpon>frmBuscarPorTiempo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmbusfech.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbusfech.Designer.cs">
+      <DependentUpon>frmbusfech.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCargaHoraria.cs">
       <SubType>Form</SubType>
@@ -129,11 +141,17 @@
       <DependentUpon>EstadoDocente.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="buscar.resx">
-      <DependentUpon>buscar.cs</DependentUpon>
+    <EmbeddedResource Include="frmBuscar.resx">
+      <DependentUpon>frmBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsignacionCurso.resx">
       <DependentUpon>frmAsignacionCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarPorTiempo.resx">
+      <DependentUpon>frmBuscarPorTiempo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmbusfech.resx">
+      <DependentUpon>frmbusfech.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCargaHoraria.resx">
       <DependentUpon>frmCargaHoraria.cs</DependentUpon>

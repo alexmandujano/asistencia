@@ -12,6 +12,7 @@ namespace SistemaAsistencia
 {
     public partial class frmPrincipal : Form
     {
+        string OpcionTipo="";
         public frmPrincipal()
         {
             InitializeComponent();
@@ -133,69 +134,141 @@ namespace SistemaAsistencia
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
            
-             String opcion = e.Node.Name;
+            String opcion = e.Node.Name;
             string ParametroDocente="";
             string ParametroFacultad="";
             string ParametroFacultadTipo = "";
- 
+            string ParametroMes = "";
+            string ParametroMesTipo = "";
+            Boolean BusquedaPorTiempo=false;
             Boolean DniNombre = false;
-            if (opcion=="menudni")
-            {
-            ParametroDocente = Interaction.InputBox("Ingrese su DNI");
-            DniNombre = true;
-            }
-            if (opcion == "menunom")
-            {
-                ParametroDocente = Interaction.InputBox("Ingrese Nombre o Ape Paterno");
-                DniNombre = true;
-            }
-            if (opcion == "menuact") ParametroDocente = "A";
-            if (opcion == "menuina") ParametroDocente = "I";
-            if (opcion == "menuvac") ParametroDocente = "V";
-            if (opcion == "menutod")
+          
+                if (opcion == "menudni")
                 {
-                    DniNombre=true;
+                    ParametroDocente = Interaction.InputBox("Ingrese su DNI");
+                    DniNombre = true;
+                }
+                if (opcion == "menunom")
+                {
+                    ParametroDocente = Interaction.InputBox("Ingrese Nombre o Ape Paterno");
+                    DniNombre = true;
+                }
+                if (opcion == "menuact") ParametroDocente = "A";
+                if (opcion == "menuina") ParametroDocente = "I";
+                if (opcion == "menuvac") ParametroDocente = "V";
+                if (opcion == "menutod")
+                {
+                    DniNombre = true;
                     ParametroDocente = "Todos";
                 }
-            if (opcion == "facasi") {
-                ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
-                ParametroFacultadTipo = "Asistencias";
+                if (opcion == "facasi")
+                {
+                    ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
+                    ParametroFacultadTipo = "Asistencias";
+                }
+                if (opcion == "facfal")
+                {
+                    ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
+                    ParametroFacultadTipo = "Faltas";
+                }
+                if (opcion == "factar")
+                {
+                    ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
+                    ParametroFacultadTipo = "Tardanzas";
+                }
+                if (opcion == "menasi")
+                {
+                    ParametroMes = Interaction.InputBox("Ingrese Mes","asistencia");
+                    ParametroMesTipo = "Asistencias";
+                    BusquedaPorTiempo = true;
+                }
+                if (opcion == "menfal")
+                {
+                    ParametroMes = Interaction.InputBox("Ingrese Mes","falta");
+                    ParametroMesTipo = "Faltas";
+                    BusquedaPorTiempo = true;
+                }
+                if (opcion == "mentar")
+                {
+                    ParametroMes = Interaction.InputBox("Ingrese Mes", "tardanza");
+                    ParametroMesTipo = "Tardanzas";
+                    BusquedaPorTiempo = true;
+                }
+                if (opcion=="fecasi" || opcion=="fecfal" || opcion =="fectar" )
+                {
+                    if (this.panelprincipal.Controls.Count > 0)this.panelprincipal.Controls.RemoveAt(0);
+                    OpcionTipo = opcion;
+                    pnlbusfech.Visible = true;
+                    return;
+                   
+
+
+                }
+                
+            if (BusquedaPorTiempo == false)
+             {
+                if (this.panelprincipal.Controls.Count > 0)
+                    this.panelprincipal.Controls.RemoveAt(0);
+                frmbus FormularioBuscar = new frmbus();
+                FormularioBuscar.TopLevel = false;
+                FormularioBuscar.FormBorderStyle = FormBorderStyle.None;
+                FormularioBuscar.Dock = DockStyle.None;
+                this.panelprincipal.Controls.Add(FormularioBuscar);
+                this.panelprincipal.Tag = FormularioBuscar;
+                FormularioBuscar.ParametroDocente = ParametroDocente;
+                FormularioBuscar.ParametroFacultad = ParametroFacultad;
+                FormularioBuscar.ParametroFacultadTipo = ParametroFacultadTipo;
+                FormularioBuscar.DniNombre = DniNombre;
+                FormularioBuscar.Show();
             }
-            if (opcion == "facfal")
+            else
             {
-                ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
-                ParametroFacultadTipo = "Faltas";
+                if (this.panelprincipal.Controls.Count > 0)
+                    this.panelprincipal.Controls.RemoveAt(0);
+                frmBuscarPorTiempo frmBuscarPorTiempo = new frmBuscarPorTiempo();
+                frmBuscarPorTiempo.TopLevel = false;
+                frmBuscarPorTiempo.FormBorderStyle = FormBorderStyle.None;
+                frmBuscarPorTiempo.Dock = DockStyle.None;
+                this.panelprincipal.Controls.Add(frmBuscarPorTiempo);
+                this.panelprincipal.Tag = frmBuscarPorTiempo;
+
+                frmBuscarPorTiempo.ParametroMes = ParametroMes;
+                frmBuscarPorTiempo.ParametroMesTipo = ParametroMesTipo;
+                frmBuscarPorTiempo.Show();
+
             }
-            if (opcion == "factar")
-            {
-                ParametroFacultad = Interaction.InputBox("Ingrese Facultad o Escuela");
-                ParametroFacultadTipo = "Tardanzas";
-            }
-         
+           
             
+        }
 
-
-
-
-
-
-
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+            DateTime fechainicial = dtpini.Value;
+            DateTime Fechafinal = dtpfin.Value;
             if (this.panelprincipal.Controls.Count > 0)
                 this.panelprincipal.Controls.RemoveAt(0);
-            frmbus FormularioBuscar = new frmbus();
-            FormularioBuscar.TopLevel = false;
-            FormularioBuscar.FormBorderStyle = FormBorderStyle.None;
-            FormularioBuscar.Dock = DockStyle.None;
-            this.panelprincipal.Controls.Add(FormularioBuscar);
-            this.panelprincipal.Tag = FormularioBuscar;
-            FormularioBuscar.ParametroDocente = ParametroDocente;
-            FormularioBuscar.ParametroFacultad = ParametroFacultad;
-            FormularioBuscar.ParametroFacultadTipo = ParametroFacultadTipo;
-            FormularioBuscar.DniNombre = DniNombre;
-            FormularioBuscar.Show();
-            
+            frmBuscarPorTiempo frmBuscarPorTiempo = new frmBuscarPorTiempo();
+            frmBuscarPorTiempo.TopLevel = false;
+            frmBuscarPorTiempo.FormBorderStyle = FormBorderStyle.None;
+            frmBuscarPorTiempo.Dock = DockStyle.None;
+            this.panelprincipal.Controls.Add(frmBuscarPorTiempo);
+            this.panelprincipal.Tag = frmBuscarPorTiempo;
+            frmBuscarPorTiempo.fechaini = fechainicial;
+            frmBuscarPorTiempo.fechafin = Fechafinal;
+            frmBuscarPorTiempo.ParametroMesTipo = OpcionTipo; // pasamos el tipo de consulta al formualrio buscar
+            frmBuscarPorTiempo.Show();
+            pnlbusfech.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pnlbusfech.Visible = false;
+        }
+
+        private void pnlbusfech_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
